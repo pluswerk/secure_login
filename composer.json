@@ -1,5 +1,5 @@
 {
-  "name": "pluswerk/secure_login",
+  "name": "pluswerk/secure-login",
   "license": "GPL-3.0+",
   "type": "typo3-cms-extension",
   "version": "1.0.0",
@@ -8,9 +8,17 @@
   "support": {
     "source": "https://github.com/pluswerk/secure_login/issues"
   },
+  "require": {
+    "php": ">=5.6.0"
+  },
   "autoload": {
     "psr-4": {
       "Pluswerk\\SecureLogin\\": "Classes/"
     }
+  },
+  "replace": {
+    "secure_login": "self.version",
+    "typo3-ter/secure_login": "self.version",
+    "typo3-ter/secure-login": "self.version"
   }
 }
