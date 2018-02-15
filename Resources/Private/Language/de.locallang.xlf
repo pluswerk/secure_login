@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages">
+    <header/>
+    <body>
+
+      <trans-unit id="banned.headline">
+        <target>Sicherheitsmeldung</target>
+      </trans-unit>
+      <trans-unit id="banned.user">
+        <target>Ihr Zugang wurde bis zum %1$s aus Sicherheitsgründen gesperrt.</target>
+      </trans-unit>
+      <trans-unit id="banned.ip">
+        <target>Ihre IP wurde bis zum %1$s aus Sicherheitsgründen gesperrt.</target>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>

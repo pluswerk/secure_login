@@ -1,0 +1,16 @@
+{
+  "name": "pluswerk/secure_login",
+  "license": "GPL-3.0+",
+  "type": "typo3-cms-extension",
+  "version": "1.0.0",
+  "description": "pluswerk: Security for authentications",
+  "homepage": "https://github.com/pluswerk/secure_login",
+  "support": {
+    "source": "https://github.com/pluswerk/secure_login/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pluswerk\\SecureLogin\\": "Classes/"
+    }
+  }
+}

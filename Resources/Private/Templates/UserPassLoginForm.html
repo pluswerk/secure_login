@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:authSecurity="http://typo3.org/ns/Pluswerk/SecureLogin/ViewHelpers">
+
+<f:layout name="Login" />
+
+<f:section name="loginFormFields">
+
+    <f:if condition="{authSecurity:securityMessage()}">
+        <div class="t3js-login-error" id="t3-login-error">
+            <div class="alert alert-warning">
+                <strong><f:translate key="LLL:EXT:secure_login/Resources/Private/Language/locallang.xlf:banned.headline" /></strong>
+                <p><authSecurity:securityMessage/></p>
+            </div>
+        </div>
+    </f:if>
+
+    <div class="form-group t3js-login-username-section" id="t3-login-username-section">
+        <div class="form-control-wrap">
+            <div class="form-control-holder">
+                <input type="text" id="t3-username" name="username" value="{presetUsername}" placeholder="{f:translate(key: 'login.username')}" class="form-control input-login t3js-clearable t3js-login-username-field" autofocus="autofocus" required="required" />
+                <div class="form-notice-capslock hidden t3js-login-alert-capslock">
+                    <img src="{images.capslock}" width="14" height="14" alt="{f:translate(key: 'login.error.capslock')}" title="{f:translate(key: 'login.error.capslock')}" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group t3js-login-password-section" id="t3-login-password-section">
+        <div class="form-control-wrap">
+            <div class="form-control-holder">
+                <input type="password" id="t3-password" name="p_field" value="{presetPassword}" placeholder="{f:translate(key: 'login.password')}" class="form-control input-login t3js-clearable t3js-login-password-field" required="required" data-rsa-encryption="t3-field-userident" />
+                <div class="form-notice-capslock hidden t3js-login-alert-capslock">
+                    <img src="{images.capslock}" width="14" height="14" alt="{f:translate(key: 'login.error.capslock')}" title="{f:translate(key: 'login.error.capslock')}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+</html>
