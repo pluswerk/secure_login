@@ -3,7 +3,7 @@
   "license": "GPL-3.0+",
   "type": "typo3-cms-extension",
   "version": "1.0.0",
-  "description": "+Pluswerk: Secure Login - brute-force security",
+  "description": "+Pluswerk TYPO3 extension: Secure Login - brute-force security",
   "homepage": "https://www.pluswerk.ag",
   "support": {
     "source": "https://github.com/pluswerk/secure_login/",
