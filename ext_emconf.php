@@ -1,6 +1,6 @@
 <?php
 $EM_CONF['secure_login'] = [
-    'title' => '+Pluswerk: Secure Login - Security for authentications - prevent brute-force attacks',
+    'title' => '+Pluswerk: Secure Login - brute-force security',
     'description' => '',
     'category' => 'module',
     'author' => 'Markus Hölzle',
