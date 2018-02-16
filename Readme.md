@@ -1,4 +1,5 @@
 [![Packagist Release](https://img.shields.io/packagist/v/pluswerk/secure-login.svg?style=flat-square)](https://packagist.org/packages/pluswerk/secure-login)
+[![Travis](https://img.shields.io/travis/pluswerk/secure_login.svg?style=flat-square)](https://travis-ci.org/pluswerk/secure_login)
 [![GitHub License](https://img.shields.io/github/license/pluswerk/secure_login.svg?style=flat-square)](https://github.com/pluswerk/secure_login/blob/master/LICENSE.txt)
 [![Code Climate](https://img.shields.io/codeclimate/github/pluswerk/secure_login.svg?style=flat-square)](https://codeclimate.com/github/pluswerk/secure_login)
 
