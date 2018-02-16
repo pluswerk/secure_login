@@ -11,6 +11,9 @@
   "require": {
     "php": ">=5.6.0"
   },
+  "require-dev": {
+    "pluswerk/grumphp-config": "2.*"
+  },
   "autoload": {
     "psr-4": {
       "Pluswerk\\SecureLogin\\": "Classes/"
@@ -20,5 +23,13 @@
     "secure_login": "self.version",
     "typo3-ter/secure_login": "self.version",
     "typo3-ter/secure-login": "self.version"
+  },
+  "extra": {
+    "pluswerk/grumphp-config": {
+      "auto-setting": true
+    },
+    "grumphp": {
+      "config-default-path": "vendor/pluswerk/grumphp-config/grumphp.yml"
+    }
   }
 }
