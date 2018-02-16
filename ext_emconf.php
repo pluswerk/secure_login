@@ -1,6 +1,6 @@
 <?php
 $EM_CONF['secure_login'] = [
-    'title' => 'pluswerk: Security for authentications - prevent brutforce attacks (user based and IP based)',
+    'title' => '+Pluswerk: Secure Login - Security for authentications - prevent brute-force attacks',
     'description' => '',
     'category' => 'module',
     'author' => 'Markus Hölzle',
@@ -13,7 +13,7 @@ $EM_CONF['secure_login'] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.9',
+            'typo3' => '7.6.9-8.7.99',
         ],
         'conflicts' => [],
         'suggests' => [],

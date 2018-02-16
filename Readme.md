@@ -3,8 +3,11 @@
 [![GitHub License](https://img.shields.io/github/license/pluswerk/secure_login.svg?style=flat-square)](https://github.com/pluswerk/secure_login/blob/master/LICENSE.txt)
 [![Code Climate](https://img.shields.io/codeclimate/github/pluswerk/secure_login.svg?style=flat-square)](https://codeclimate.com/github/pluswerk/secure_login)
 
-#  Auth Security validation
-This extension checks frontend and backend logins for brute-force attacks. 
+# +Pluswerk TYPO3 security extension: Secure Login
+This extension checks frontend and backend logins for brute-force attacks.
+You can also detect and avoid brute-force attacks on other inputs, like serial number inputs or coupon code inputs.
+
+Say goodbye to the try-out-hackers!
 
 #### Advantages
 * extendable 

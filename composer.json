@@ -4,9 +4,11 @@
   "type": "typo3-cms-extension",
   "version": "1.0.0",
   "description": "pluswerk: Security for authentications",
-  "homepage": "https://github.com/pluswerk/secure_login",
+  "homepage": "https://www.pluswerk.ag",
   "support": {
-    "source": "https://github.com/pluswerk/secure_login/issues"
+    "source": "https://github.com/pluswerk/secure_login/issues",
+    "issues": "https://github.com/pluswerk/secure_login/issues",
+    "docs": "https://github.com/pluswerk/secure_login/blob/master/Readme.md"
   },
   "require": {
     "php": ">=5.6.0"
