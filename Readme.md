@@ -87,7 +87,7 @@ This sample logs failed logins:
 ```php 
 $formInDatabase = $this->formRepository->findBySerialNumber($form->getSerialNumber()); 
 if (count($formInDatabase) > 0) { 
-  /** @var \AUS\AusAuthSecurity\Configuration\BlockingConfiguration $blockingConfiguration */ 
+  /** @var \Pluswerk\SecureLogin\Configuration\BlockingConfiguration $blockingConfiguration */ 
   $blockingConfiguration = \Pluswerk\SecureLogin\Configuration\BlockingConfiguration::createConfig();
   
   /** @var AuthSecurityService $authSecurityService */
