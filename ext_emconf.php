@@ -10,10 +10,10 @@ $EM_CONF['secure_login'] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
+    'version' => '2.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.9-8.7.99',
+            'typo3' => '8.7.99-9.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],

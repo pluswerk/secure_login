@@ -58,7 +58,7 @@ class AuthenticationService extends \TYPO3\CMS\Sv\AuthenticationService
      *             <= 0:   Authentication failed, no more checking needed
      *                     by other auth services.
      */
-    public function authUser(array $user)
+    public function authUser(array $user): int
     {
         $result = (int)parent::authUser($user);
         if ($result === 0) {

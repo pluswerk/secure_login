@@ -20,10 +20,19 @@ defined('TYPO3_MODE') || die('Access denied.');
 );
 
 // XClass existing services for subType "getUser" and "authUser" to log login failures
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Saltedpasswords\SaltedPasswordService::class] = [
-    'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\SaltedPasswordService::class,
-];
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Sv\AuthenticationService::class] = [
+## v7, 8
+#$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Saltedpasswords\SaltedPasswordService::class] = [
+#    'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\SaltedPasswordService::class,
+#];
+## v9
+// see TYPO3\CMS\Core\Authentication\AuthenticationService, search for "salt"
+
+## v7, 8
+#$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Sv\AuthenticationService::class] = [
+#    'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\AuthenticationService::class,
+#];
+## v9
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Authentication\AuthenticationService::class] = [
     'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\AuthenticationService::class,
 ];
 
