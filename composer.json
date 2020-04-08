@@ -11,7 +11,7 @@
     "docs": "https://github.com/pluswerk/secure_login/blob/master/Readme.md"
   },
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.2.0",
     "typo3/cms-core": ">=9.5, <10.4"
   },
   "require-dev": {
