@@ -23,7 +23,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license GPL, version 2
  * @package Pluswerk\SecureLogin\AuthenticationServices
  */
-class SaltedPasswordService extends \TYPO3\CMS\Saltedpasswords\SaltedPasswordService
+class SaltedPasswordService extends \TYPO3\CMS\Core\Crypto\PasswordHashing\SaltedPasswordService
 {
 
     /**

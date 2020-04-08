@@ -139,11 +139,12 @@ class AuthSecurityService implements SingletonInterface
                 throw new \Exception('Unknown log type "' . $type . '"!');
             }
             $blockadeResult = $this->databaseHandler->getBlockade($type, $authKey, $authIdentifier, $timestamp);
-            if (is_array($blockadeResult)) {
+            if (is_array($blockadeResult) && !empty($blockadeResult)) {
                 $blockade = $blockadeResult;
                 break;
             }
         }
+        
         if ($setPublicBlockade && $blockade !== null) {
             $this->setPublicBlockade($blockade);
         }

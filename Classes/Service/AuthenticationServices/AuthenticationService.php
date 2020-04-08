@@ -23,7 +23,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license GPL, version 2
  * @package Pluswerk\SecureLogin\AuthenticationServices
  */
-class AuthenticationService extends \TYPO3\CMS\Sv\AuthenticationService
+class AuthenticationService extends \TYPO3\CMS\Core\Authentication\AuthenticationService
 {
 
     /**

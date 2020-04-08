@@ -237,15 +237,23 @@ class DatabaseHandler implements SingletonInterface
         if ($this->queryBuilder) {
             $queryBuilder = $this->queryBuilder
                 ->getQueryBuilderForTable(static::TABLE_BLOCKADE);
-            $resource = $queryBuilder->select('*')
+            $query = $queryBuilder->select('*')
                 ->from(static::TABLE_BLOCKADE)
                 ->where(
                     $queryBuilder->expr()->eq('type', $queryBuilder->createNamedParameter($type)),
                     $queryBuilder->expr()->eq('auth_key', $queryBuilder->createNamedParameter($authKey)),
                     $queryBuilder->expr()->eq('auth_identifier', $queryBuilder->createNamedParameter($authIdentifier)),
                     $queryBuilder->expr()->gte('expired', $queryBuilder->createNamedParameter($timestamp, \PDO::PARAM_INT))
-                );
-            return $resource->execute()->fetchColumn(0);
+                )
+                ->execute();
+
+            $results = $query->fetchAll();
+
+            if (is_array($results) && count($results)) {
+                return $results[count($results)-1];
+            } else {
+                return $results;
+            }
         } else {
             // LEGACY CODE
             // -----------
