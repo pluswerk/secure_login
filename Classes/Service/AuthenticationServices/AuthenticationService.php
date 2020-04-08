@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -34,8 +35,8 @@ class AuthenticationService extends \TYPO3\CMS\Core\Authentication\Authenticatio
     public function getUser()
     {
         $result = parent::getUser();
-        if ($result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== '' &&
-            (string)$this->login['uname'] !== ''
+        if ($result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== ''
+            && (string)$this->login['uname'] !== ''
         ) {
             /** @var AuthSecurityService $authSecurityService */
             $authSecurityService = GeneralUtility::makeInstance(AuthSecurityService::class);

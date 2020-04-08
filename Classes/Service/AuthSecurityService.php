@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Service;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Service;
 
 use Pluswerk\SecureLogin\Configuration\BlockingConfiguration;
 use Pluswerk\SecureLogin\Persistence\DatabaseHandler;
@@ -157,8 +158,8 @@ class AuthSecurityService implements SingletonInterface
     public function getPublicErrorMessage()
     {
         $message = '';
-        if (isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade']) &&
-            is_array($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
+        if (isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
         ) {
             $blockade = &$GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'];
 

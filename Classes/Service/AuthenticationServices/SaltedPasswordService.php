@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

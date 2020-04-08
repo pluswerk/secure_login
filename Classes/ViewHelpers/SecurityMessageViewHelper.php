@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\ViewHelpers;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\ViewHelpers;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\ViewHelpers;
 
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;

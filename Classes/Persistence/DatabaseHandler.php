@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Persistence;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Persistence;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Persistence;
 
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -103,15 +104,15 @@ class DatabaseHandler implements SingletonInterface
                 $resource = $queryBuilder
                     ->update(static::TABLE_FAILED_ATTEMPT);
                 $resource = $this->addFailedAttemptWhereClause(
-                        $resource,
-                        $queryBuilder,
-                        $type,
-                        $authKey,
-                        $authIdentifier,
-                        $hashedFailureValue
-                    )
-                    ->set('timestamp', (int)$timestamp)
-                    ->execute();
+                    $resource,
+                    $queryBuilder,
+                    $type,
+                    $authKey,
+                    $authIdentifier,
+                    $hashedFailureValue
+                )
+                ->set('timestamp', (int)$timestamp)
+                ->execute();
             } else {
                 $resource = $queryBuilder
                     ->insert(static::TABLE_FAILED_ATTEMPT)
@@ -140,7 +141,6 @@ class DatabaseHandler implements SingletonInterface
                 );
             }
         }
-
     }
 
     /**
@@ -160,15 +160,15 @@ class DatabaseHandler implements SingletonInterface
                 ->count('*')
                 ->from(static::TABLE_FAILED_ATTEMPT);
             $resource = $this->addFailedAttemptWhereClause(
-                    $resource,
-                    $queryBuilder,
-                    $type,
-                    $authKey,
-                    $authIdentifier
-                )
-                ->andWhere(
-                    $queryBuilder->expr()->gte('timestamp', $queryBuilder->createNamedParameter($greaterThanTimestamp, \PDO::PARAM_INT))
-                );
+                $resource,
+                $queryBuilder,
+                $type,
+                $authKey,
+                $authIdentifier
+            )
+            ->andWhere(
+                $queryBuilder->expr()->gte('timestamp', $queryBuilder->createNamedParameter($greaterThanTimestamp, \PDO::PARAM_INT))
+            );
             $failedAttempts = $resource->execute()->fetchColumn(0);
         } else {
             // LEGACY CODE
@@ -250,7 +250,7 @@ class DatabaseHandler implements SingletonInterface
             $results = $query->fetchAll();
 
             if (is_array($results) && count($results)) {
-                return $results[count($results)-1];
+                return $results[count($results) - 1];
             } else {
                 return $results;
             }

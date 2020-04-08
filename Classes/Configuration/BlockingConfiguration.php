@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Configuration;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Configuration;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Configuration;
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
