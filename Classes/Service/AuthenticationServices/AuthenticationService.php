@@ -35,7 +35,8 @@ class AuthenticationService extends \TYPO3\CMS\Core\Authentication\Authenticatio
     public function getUser()
     {
         $result = parent::getUser();
-        if ($result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== ''
+        if (
+            $result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== ''
             && (string)$this->login['uname'] !== ''
         ) {
             /** @var AuthSecurityService $authSecurityService */

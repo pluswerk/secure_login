@@ -158,7 +158,8 @@ class AuthSecurityService implements SingletonInterface
     public function getPublicErrorMessage()
     {
         $message = '';
-        if (isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
+        if (
+            isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
             && is_array($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
         ) {
             $blockade = &$GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'];

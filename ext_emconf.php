@@ -1,4 +1,5 @@
 <?php
+
 $EM_CONF['secure_login'] = [
     'title' => '+Pluswerk: Secure Login - brute-force security',
     'description' => '',
