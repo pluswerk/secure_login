@@ -23,9 +23,9 @@
     }
   },
   "replace": {
-    "secure_login": "self.version",
-    "typo3-ter/secure_login": "self.version",
-    "typo3-ter/secure-login": "self.version"
+    "secure_login": "pluswerk/secure-login",
+    "typo3-ter/secure_login": "pluswerk/secure-login",
+    "typo3-ter/secure-login": "pluswerk/secure-login"
   },
   "extra": {
     "pluswerk/grumphp-config": {
