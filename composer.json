@@ -23,8 +23,6 @@
     }
   },
   "replace": {
-    "pluswerk/secure_login": "self.version",
-    "typo3-ter/secure_login": "self.version",
     "typo3-ter/secure-login": "self.version"
   },
   "extra": {
