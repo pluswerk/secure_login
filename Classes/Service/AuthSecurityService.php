@@ -224,7 +224,7 @@ class AuthSecurityService implements SingletonInterface
     protected function isBlockadeRequired($authIdentifier, $authKey, $type, BlockingConfiguration $configuration)
     {
         $required = false;
-        if (!is_array($this->databaseHandler->getBlockade($type, $authKey, $authIdentifier))) {
+        if (empty($this->databaseHandler->getBlockade($type, $authKey, $authIdentifier))) {
             $timestamp = time() - $configuration->getTimeRangeInSeconds();
             $failedAttempts = $this->databaseHandler->countFailedAttempts($authIdentifier, $authKey, $type, $timestamp);
             $required = $failedAttempts > $configuration->getMaxFailedAttempts();
