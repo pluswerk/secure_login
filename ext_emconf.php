@@ -1,4 +1,5 @@
 <?php
+
 $EM_CONF['secure_login'] = [
     'title' => '+Pluswerk: Secure Login - brute-force security',
     'description' => '',
@@ -10,10 +11,10 @@ $EM_CONF['secure_login'] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
+    'version' => '2.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.9-8.7.99',
+            'typo3' => '9.5.0-10.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

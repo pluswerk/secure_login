@@ -1,4 +1,5 @@
 <?php
+
 defined('TYPO3_MODE') || die('Access denied.');
 
 // Add a login service to deny blocked users
@@ -19,11 +20,11 @@ defined('TYPO3_MODE') || die('Access denied.');
     ]
 );
 
-// XClass existing services for subType "getUser" and "authUser" to log login failures
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Saltedpasswords\SaltedPasswordService::class] = [
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Crypto\PasswordHashing\SaltedPasswordService::class] = [
     'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\SaltedPasswordService::class,
 ];
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Sv\AuthenticationService::class] = [
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Authentication\AuthenticationService::class] = [
     'className' => \Pluswerk\SecureLogin\Service\AuthenticationServices\AuthenticationService::class,
 ];
 

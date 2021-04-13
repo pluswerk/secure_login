@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 /***
  *
@@ -12,9 +11,11 @@ namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
  *
  ***/
 
+namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
+
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Sv\AuthenticationService as SvAuthenticationService;
+use TYPO3\CMS\Core\Authentication\AuthenticationService as CoreAuthenticationService;
 
 /**
  * Class DenyAuthenticationService
@@ -24,7 +25,7 @@ use TYPO3\CMS\Sv\AuthenticationService as SvAuthenticationService;
  * @license GPL, version 2
  * @package Pluswerk\SecureLogin\AuthenticationServices
  */
-class DenyAuthenticationService extends SvAuthenticationService
+class DenyAuthenticationService extends CoreAuthenticationService
 {
 
     /**
@@ -40,7 +41,7 @@ class DenyAuthenticationService extends SvAuthenticationService
      *             <= 0:   Authentication failed, no more checking needed
      *                     by other auth services.
      */
-    public function authUser(array $user)
+    public function authUser(array $user): int
     {
         $result = 100;
         /** @var AuthSecurityService $authSecurityService */

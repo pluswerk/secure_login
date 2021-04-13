@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\LoginProvider;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\LoginProvider;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\LoginProvider;
 
 use TYPO3\CMS\Backend\Controller\LoginController;
 use TYPO3\CMS\Core\Page\PageRenderer;

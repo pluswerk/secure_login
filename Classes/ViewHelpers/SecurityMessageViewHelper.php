@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\ViewHelpers;
 
 /***
  *
@@ -12,9 +11,11 @@ namespace Pluswerk\SecureLogin\ViewHelpers;
  *
  ***/
 
+namespace Pluswerk\SecureLogin\ViewHelpers;
+
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Class SecurityMessageViewHelper

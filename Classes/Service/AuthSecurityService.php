@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service;
 
 /***
  *
@@ -11,6 +10,8 @@ namespace Pluswerk\SecureLogin\Service;
  * (c) 2018 Markus Hölzle <markus.hoelzle@pluswerk.ag>, +Pluswerk AG
  *
  ***/
+
+namespace Pluswerk\SecureLogin\Service;
 
 use Pluswerk\SecureLogin\Configuration\BlockingConfiguration;
 use Pluswerk\SecureLogin\Persistence\DatabaseHandler;
@@ -139,11 +140,12 @@ class AuthSecurityService implements SingletonInterface
                 throw new \Exception('Unknown log type "' . $type . '"!');
             }
             $blockadeResult = $this->databaseHandler->getBlockade($type, $authKey, $authIdentifier, $timestamp);
-            if (is_array($blockadeResult)) {
+            if (is_array($blockadeResult) && !empty($blockadeResult)) {
                 $blockade = $blockadeResult;
                 break;
             }
         }
+        
         if ($setPublicBlockade && $blockade !== null) {
             $this->setPublicBlockade($blockade);
         }
@@ -156,8 +158,9 @@ class AuthSecurityService implements SingletonInterface
     public function getPublicErrorMessage()
     {
         $message = '';
-        if (isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade']) &&
-            is_array($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
+        if (
+            isset($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
+            && is_array($GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'])
         ) {
             $blockade = &$GLOBALS['TYPO3_CONF_VARS ']['secure_login']['currentBlockade'];
 
@@ -221,7 +224,7 @@ class AuthSecurityService implements SingletonInterface
     protected function isBlockadeRequired($authIdentifier, $authKey, $type, BlockingConfiguration $configuration)
     {
         $required = false;
-        if (!is_array($this->databaseHandler->getBlockade($type, $authKey, $authIdentifier))) {
+        if (empty($this->databaseHandler->getBlockade($type, $authKey, $authIdentifier))) {
             $timestamp = time() - $configuration->getTimeRangeInSeconds();
             $failedAttempts = $this->databaseHandler->countFailedAttempts($authIdentifier, $authKey, $type, $timestamp);
             $required = $failedAttempts > $configuration->getMaxFailedAttempts();

@@ -1,5 +1,4 @@
 <?php
-namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
 
 /***
  *
@@ -12,6 +11,8 @@ namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
  *
  ***/
 
+namespace Pluswerk\SecureLogin\Service\AuthenticationServices;
+
 use Pluswerk\SecureLogin\Service\AuthSecurityService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -23,7 +24,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @license GPL, version 2
  * @package Pluswerk\SecureLogin\AuthenticationServices
  */
-class AuthenticationService extends \TYPO3\CMS\Sv\AuthenticationService
+class AuthenticationService extends \TYPO3\CMS\Core\Authentication\AuthenticationService
 {
 
     /**
@@ -34,8 +35,9 @@ class AuthenticationService extends \TYPO3\CMS\Sv\AuthenticationService
     public function getUser()
     {
         $result = parent::getUser();
-        if ($result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== '' &&
-            (string)$this->login['uname'] !== ''
+        if (
+            $result === false && $this->login['status'] === 'login' && (string)$this->login['uident_text'] !== ''
+            && (string)$this->login['uname'] !== ''
         ) {
             /** @var AuthSecurityService $authSecurityService */
             $authSecurityService = GeneralUtility::makeInstance(AuthSecurityService::class);
@@ -58,7 +60,7 @@ class AuthenticationService extends \TYPO3\CMS\Sv\AuthenticationService
      *             <= 0:   Authentication failed, no more checking needed
      *                     by other auth services.
      */
-    public function authUser(array $user)
+    public function authUser(array $user): int
     {
         $result = (int)parent::authUser($user);
         if ($result === 0) {
